@@ -1,0 +1,49 @@
+// per passare all'interno del ciclo (problema1) possiamo utilizzare un ciclo for (OK)
+
+// dato che i giorni della settimana sono 7 va fatta una modifica all'interno di questo codice (i = 0; i < giorniSettimana.length; i++) (OK?)
+
+// stampare il giorno della settimana partendo da 0 [i] e lo concateniamo al giorno vero e proprio con (i+1) (OK?)
+
+// da qui in poi definiamo le nostre condizioni di stampa if (OK)
+
+// if se il giorno corrispondo a mercoledì non vogliamo mangiare mele. Quando il giorno corrisponde a mercoledì mi salterà il codice del mangiamela per eseguirmi il codice del non mangiarmi la mela
+
+// man mano che andremo ad eseguire il codice noi dovremmo inserire una diminuzione delle nostre mele rimanenti meleRimanenti--
+
+// se vogliamo interrompere il codice dovrò utilizzare il comando break, lo utilizzeremo se meleRimanenti <= 2.
+
+var giorniSettimana = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"]; //Array contenente i giorni della settimana
+
+var meleRimanenti = 5 // dichiarazione variabile delle mele
+
+var divide = "----------" // dichiarazione variabile delle linee di divisione
+
+for (i = 0; i < giorniSettimana.length; i++) // dato che i giorni della settimana sono 7 va fatta una modifica all'interno di questo codice (i = 0; i < giorniSettimana.length-1; i++)
+{
+    // stampiamo il giorno della settimana partendo da 0 [i] e lo concateniamo al giorno vero e proprio con (i+1)
+    console.log("Ho " + meleRimanenti + " mele") // stampare le mele rimanenti
+    
+    if (meleRimanenti <= 2) // prima condizione all'interno del ciclo for. Se le mele rimanenti sono <= 2... (Quindi sto ipotizzando siamno a Venerdì)
+    {
+        console.log("Da oggi non posso mangiare mele")
+        console.log(divide) // stampiamo la linea divisoria
+        console.log("Ho 2 mele e non posso più mangiarle")
+        break // interrompo il ciclo for
+    }
+
+    if (giorniSettimana[i] == "Mercoledì") // seconda condizione all'interno del ciclo for. Se è Mercoledì...
+    {
+        console.log("Oggi non ho voglia di mela")
+        console.log("Mi rimangono " + meleRimanenti + " mele")
+        console.log(divide)
+        continue // salta il Mercoledì
+    }
+
+// in tutte le altre situazioni
+    meleRimanenti-- // sottraggo una mela a quelle rimanenti
+
+    console.log("Mangio una mela")
+    console.log("Mi rimangono " + meleRimanenti + " mele")
+    console.log(divide)
+
+}
